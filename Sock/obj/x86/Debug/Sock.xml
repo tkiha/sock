@@ -1,0 +1,1245 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Sock
+</name>
+</assembly>
+<members>
+<member name="F:Sock.StateObject._Buffer">
+	<summary>
+ 送受信バッファ
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Sock.StateObject.WorkSocket">
+	<summary>
+ ワークソケット
+ </summary>
+	<remarks>ワークソケット</remarks>
+</member><member name="F:Sock.StateObject.BufferSize">
+	<summary>
+ 受信サイズ最大
+ </summary>
+	<remarks>受信サイズ最大</remarks>
+</member><member name="P:Sock.StateObject.Buffer">
+	<summary>
+ 受信バッファ
+ </summary>
+	<remarks>受信バッファ</remarks>
+</member><member name="P:Sock.StateObject.Sb">
+	<summary>
+ 受信データを文字にしたもの
+ </summary>
+	<remarks>受信データを文字にしたもの</remarks>
+</member><member name="P:Sock.StateObject.bRecv">
+	<summary>
+ 受信データ
+ </summary>
+	<remarks>受信データ</remarks>
+</member><member name="P:Sock.StateObject.bSend">
+	<summary>
+ 送信データ
+ </summary>
+	<remarks>送信データ</remarks>
+</member><member name="P:Sock.StateObject.RemoteIP">
+	<summary>
+ 相手IP
+ </summary>
+	<remarks>相手IP</remarks>
+</member><member name="P:Sock.StateObject.RemotePort">
+	<summary>
+ 相手PORT
+ </summary>
+	<remarks>相手PORT</remarks>
+</member><member name="P:Sock.StateObject.LocalIP">
+	<summary>
+ 自分IP
+ </summary>
+	<remarks>自分IP</remarks>
+</member><member name="P:Sock.StateObject.LocalPort">
+	<summary>
+ 自分PORT
+ </summary>
+	<remarks>自分PORT</remarks>
+</member><member name="T:Sock.StateObject">
+	<summary>
+ 送受信管理クラス
+ </summary>
+	<remarks>送受信管理クラス</remarks>
+</member><member name="P:Sock.SockMessageEventArgs.Msg">
+	<summary>
+ メッセージ
+ </summary>
+	<remarks>メッセージ</remarks>
+</member><member name="T:Sock.SockMessageEventArgs">
+	<summary>
+ ソケットメッセージイベント引数
+ </summary>
+	<remarks>ソケットメッセージイベント引数</remarks>
+</member><member name="P:Sock.SockErrorEventArgs.Msg">
+	<summary>
+ メッセージ
+ </summary>
+	<remarks>メッセージ</remarks>
+</member><member name="P:Sock.SockErrorEventArgs.ErrorType">
+	<summary>
+ エラー種別
+ </summary>
+	<remarks>エラー種別</remarks>
+</member><member name="P:Sock.SockErrorEventArgs.RemoteIP">
+	<summary>
+ 相手IP (エラー種別によっては入ってこない）
+ </summary>
+	<remarks>相手IP (エラー種別によっては入ってこない）</remarks>
+</member><member name="P:Sock.SockErrorEventArgs.RemotePort">
+	<summary>
+ 相手PORT(エラー種別によっては入ってこない）
+ </summary>
+	<remarks>相手PORT(エラー種別によっては入ってこない）</remarks>
+</member><member name="P:Sock.SockErrorEventArgs.SendKey">
+	<summary>
+ 送信時に設定したKey
+ </summary>
+	<remarks>送信時に設定したKey</remarks>
+</member><member name="T:Sock.SockErrorEventArgs">
+	<summary>
+ ソケットエラーイベント引数
+ </summary>
+	<remarks>ソケットエラーイベント引数</remarks>
+</member><member name="P:Sock.SockReceiveStartEventArgs.RemoteIP">
+	<summary>
+ 相手IP
+ </summary>
+	<remarks>相手IP</remarks>
+</member><member name="P:Sock.SockReceiveStartEventArgs.RemotePort">
+	<summary>
+ 相手PORT
+ </summary>
+	<remarks>相手PORT</remarks>
+</member><member name="P:Sock.SockReceiveStartEventArgs.LocalIP">
+	<summary>
+ 自分IP
+ </summary>
+	<remarks>自分IP</remarks>
+</member><member name="P:Sock.SockReceiveStartEventArgs.LocalPort">
+	<summary>
+ 自分PORT
+ </summary>
+	<remarks>自分PORT</remarks>
+</member><member name="T:Sock.SockReceiveStartEventArgs">
+	<summary>
+ ソケット受信開始イベント引数
+ </summary>
+	<remarks>ソケット受信開始イベント引数</remarks>
+</member><member name="P:Sock.SockReceiveEndEventArgs.RemoteIP">
+	<summary>
+ 相手IP
+ </summary>
+	<remarks>相手IP</remarks>
+</member><member name="P:Sock.SockReceiveEndEventArgs.RemotePort">
+	<summary>
+ 相手PORT
+ </summary>
+	<remarks>相手PORT</remarks>
+</member><member name="P:Sock.SockReceiveEndEventArgs.LocalIP">
+	<summary>
+ 自分IP
+ </summary>
+	<remarks>自分IP</remarks>
+</member><member name="P:Sock.SockReceiveEndEventArgs.LocalPort">
+	<summary>
+ 自分PORT
+ </summary>
+	<remarks>自分PORT</remarks>
+</member><member name="P:Sock.SockReceiveEndEventArgs.RecvChar">
+	<summary>
+ 受信内容
+ </summary>
+	<remarks>受信内容</remarks>
+</member><member name="P:Sock.SockReceiveEndEventArgs.SendKey">
+	<summary>
+ 送信時に設定したKey
+ </summary>
+	<remarks>送信時に設定したKey</remarks>
+</member><member name="T:Sock.SockReceiveEndEventArgs">
+	<summary>
+ ソケット受信完了イベント引数
+ </summary>
+	<remarks>ソケット受信完了イベント引数</remarks>
+</member><member name="P:Sock.SockSendEndEventArgs.RemoteIP">
+	<summary>
+ 相手IP
+ </summary>
+	<remarks>相手IP</remarks>
+</member><member name="P:Sock.SockSendEndEventArgs.RemotePort">
+	<summary>
+ 相手PORT
+ </summary>
+	<remarks>相手PORT</remarks>
+</member><member name="P:Sock.SockSendEndEventArgs.LocalIP">
+	<summary>
+ 自分IP
+ </summary>
+	<remarks>自分IP</remarks>
+</member><member name="P:Sock.SockSendEndEventArgs.LocalPort">
+	<summary>
+ 自分PORT
+ </summary>
+	<remarks>自分PORT</remarks>
+</member><member name="P:Sock.SockSendEndEventArgs.SendChar">
+	<summary>
+ 送信内容
+ </summary>
+	<remarks>送信内容</remarks>
+</member><member name="P:Sock.SockSendEndEventArgs.SendKey">
+	<summary>
+ 送信時に設定したKey
+ </summary>
+	<remarks>送信時に設定したKey</remarks>
+</member><member name="T:Sock.SockSendEndEventArgs">
+	<summary>
+ ソケット送信完了イベント引数
+ </summary>
+	<remarks>ソケット送信完了イベント引数</remarks>
+</member><member name="P:Sock.SockListenEndEventArgs.LocalIP">
+	<summary>
+ 自分IP
+ </summary>
+	<remarks>自分IP</remarks>
+</member><member name="P:Sock.SockListenEndEventArgs.LocalPort">
+	<summary>
+ 自分PORT
+ </summary>
+	<remarks>自分PORT</remarks>
+</member><member name="T:Sock.SockListenEndEventArgs">
+	<summary>
+ ソケットListen完了イベント引数
+ </summary>
+	<remarks>ソケットListen完了イベント引数</remarks>
+</member><member name="P:Sock.SockConnectEndEventArgs.RemoteIP">
+	<summary>
+ 相手IP
+ </summary>
+	<remarks>相手IP</remarks>
+</member><member name="P:Sock.SockConnectEndEventArgs.RemotePort">
+	<summary>
+ 相手PORT
+ </summary>
+	<remarks>相手PORT</remarks>
+</member><member name="P:Sock.SockConnectEndEventArgs.LocalIP">
+	<summary>
+ 自分IP
+ </summary>
+	<remarks>自分IP</remarks>
+</member><member name="P:Sock.SockConnectEndEventArgs.LocalPort">
+	<summary>
+ 自分PORT
+ </summary>
+	<remarks>自分PORT</remarks>
+</member><member name="T:Sock.SockConnectEndEventArgs">
+	<summary>
+ ソケット接続完了イベント引数
+ </summary>
+	<remarks>ソケット接続完了イベント引数</remarks>
+</member><member name="P:Sock.SockConnectRetryEventArgs.RemoteIP">
+	<summary>
+ 相手IP
+ </summary>
+	<remarks>相手IP</remarks>
+</member><member name="P:Sock.SockConnectRetryEventArgs.RemotePort">
+	<summary>
+ 相手PORT
+ </summary>
+	<remarks>相手PORT</remarks>
+</member><member name="P:Sock.SockConnectRetryEventArgs.RetryDo">
+	<summary>
+ リトライ回数
+ </summary>
+	<remarks>リトライ回数</remarks>
+</member><member name="T:Sock.SockConnectRetryEventArgs">
+	<summary>
+ ソケット接続リトライイベント引数
+ </summary>
+	<remarks>ソケット接続リトライイベント引数</remarks>
+</member><member name="P:Sock.SockAcceptEndEventArgs.RemoteIP">
+	<summary>
+ 相手IP
+ </summary>
+	<remarks>相手IP</remarks>
+</member><member name="P:Sock.SockAcceptEndEventArgs.RemotePort">
+	<summary>
+ 相手PORT
+ </summary>
+	<remarks>相手PORT</remarks>
+</member><member name="P:Sock.SockAcceptEndEventArgs.LocalIP">
+	<summary>
+ 自分IP
+ </summary>
+	<remarks>自分IP</remarks>
+</member><member name="P:Sock.SockAcceptEndEventArgs.LocalPort">
+	<summary>
+ 自分PORT
+ </summary>
+	<remarks>自分PORT</remarks>
+</member><member name="T:Sock.SockAcceptEndEventArgs">
+	<summary>
+ ソケットAccept完了イベント引数
+ </summary>
+	<remarks>ソケットAccept完了イベント引数</remarks>
+</member><member name="P:Sock.SockSendRetryEventArgs.RemoteIP">
+	<summary>
+ 相手IP
+ </summary>
+	<remarks>相手IP</remarks>
+</member><member name="P:Sock.SockSendRetryEventArgs.RemotePort">
+	<summary>
+ 相手PORT
+ </summary>
+	<remarks>相手PORT</remarks>
+</member><member name="P:Sock.SockSendRetryEventArgs.LocalIP">
+	<summary>
+ 自分IP
+ </summary>
+	<remarks>自分IP</remarks>
+</member><member name="P:Sock.SockSendRetryEventArgs.LocalPort">
+	<summary>
+ 自分PORT
+ </summary>
+	<remarks>自分PORT</remarks>
+</member><member name="P:Sock.SockSendRetryEventArgs.RetryDo">
+	<summary>
+ リトライ回数
+ </summary>
+	<remarks>リトライ回数</remarks>
+</member><member name="P:Sock.SockSendRetryEventArgs.SendKey">
+	<summary>
+ 送信時に設定したKey
+ </summary>
+	<remarks>送信時に設定したKey</remarks>
+</member><member name="T:Sock.SockSendRetryEventArgs">
+	<summary>
+ ソケット送信リトライイベント引数
+ </summary>
+	<remarks>ソケット送信リトライイベント引数</remarks>
+</member><member name="F:Sock.SockErrors.BindErr">
+	<summary>
+ BINDエラー
+ </summary>
+	<remarks>BINDエラー</remarks>
+</member><member name="F:Sock.SockErrors.ListenErr">
+	<summary>
+ Listenエラー
+ </summary>
+	<remarks>Listenエラー</remarks>
+</member><member name="F:Sock.SockErrors.AcceptErr">
+	<summary>
+ Acceptエラー
+ </summary>
+	<remarks>Acceptエラー</remarks>
+</member><member name="F:Sock.SockErrors.ConnectErr">
+	<summary>
+ Connectエラー
+ </summary>
+	<remarks>Connectエラー</remarks>
+</member><member name="F:Sock.SockErrors.SendErr">
+	<summary>
+ Sendエラー
+ </summary>
+	<remarks>Sendエラー</remarks>
+</member><member name="F:Sock.SockErrors.SendRetryOver">
+	<summary>
+ Sendリトライオーバ
+ </summary>
+	<remarks>Sendリトライオーバ</remarks>
+</member><member name="F:Sock.SockErrors.RecvErr">
+	<summary>
+ Receiveエラー
+ </summary>
+	<remarks>Receiveエラー</remarks>
+</member><member name="F:Sock.SockErrors.BeginRecvErr">
+	<summary>
+ BeginReceiveエラー
+ </summary>
+	<remarks>BeginReceiveエラー</remarks>
+</member><member name="F:Sock.SockErrors.ConnectRetryOver">
+	<summary>
+ Connectリトライオーバ
+ </summary>
+	<remarks>Connectリトライオーバ</remarks>
+</member><member name="F:Sock.SockErrors.OtherErr">
+	<summary>
+ その他エラー
+ </summary>
+	<remarks>その他エラー</remarks>
+</member><member name="T:Sock.SockErrors">
+	<summary>
+ ソケット結果
+ </summary>
+	<remarks>ソケット結果</remarks>
+</member><member name="F:Sock.SockStatuses.Connecting">
+	<summary>
+ 接続中
+ </summary>
+	<remarks>接続中</remarks>
+</member><member name="F:Sock.SockStatuses.Connected">
+	<summary>
+ 接続した
+ </summary>
+	<remarks>接続した</remarks>
+</member><member name="F:Sock.SockStatuses.Sending">
+	<summary>
+ 送信中
+ </summary>
+	<remarks>送信中</remarks>
+</member><member name="F:Sock.SockStatuses.Sended">
+	<summary>
+ 送信した
+ </summary>
+	<remarks>送信した</remarks>
+</member><member name="F:Sock.SockStatuses.Receiving">
+	<summary>
+ 受信中
+ </summary>
+	<remarks>受信中</remarks>
+</member><member name="F:Sock.SockStatuses.Received">
+	<summary>
+ 受信した
+ </summary>
+	<remarks>受信した</remarks>
+</member><member name="F:Sock.SockStatuses.Binding">
+	<summary>
+ BIND中
+ </summary>
+	<remarks>BIND中</remarks>
+</member><member name="F:Sock.SockStatuses.Binded">
+	<summary>
+ BINDした
+ </summary>
+	<remarks>BINDした</remarks>
+</member><member name="F:Sock.SockStatuses.Listening">
+	<summary>
+ Listen中
+ </summary>
+	<remarks>Listen中</remarks>
+</member><member name="F:Sock.SockStatuses.Listned">
+	<summary>
+ Listenした
+ </summary>
+	<remarks>Listenした</remarks>
+</member><member name="F:Sock.SockStatuses.SendWaiting">
+	<summary>
+ 送信待ち中
+ </summary>
+	<remarks>送信待ち中</remarks>
+</member><member name="T:Sock.SockStatuses">
+	<summary>
+ ソケット状態
+ </summary>
+	<remarks>ソケット状態</remarks>
+</member><member name="P:Sock.RecvSockClass.EndCheckChar">
+	<summary>
+ 受信終了判定文字列。この文字が来たら電文の終了とする。この文字を指定した場合、この文字が来るまで電文を連結して受信を続ける。指定していない場合は１回の通信単位＝電文単位となる
+ </summary>
+	<remarks>
+ 受信終了判定文字列。この文字が来たら電文の終了とする。この文字を指定した場合、この文字が来るまで電文を連結して受信を続ける。指定していない場合は１回の通信単位＝電文単位となる
+ </remarks>
+</member><member name="P:Sock.RecvSockClass.LocalIP">
+	<summary>
+ 待ち受けIP
+ </summary>
+	<remarks>待ち受けIP</remarks>
+</member><member name="P:Sock.RecvSockClass.LocalPort">
+	<summary>
+ 待ち受けPort
+ </summary>
+	<remarks>待ち受けPort</remarks>
+</member><member name="F:Sock.RecvSockClass.TAG">
+	<summary>
+ タグ（呼び出し側で自由に使ってよい）
+ </summary>
+	<remarks>タグ（呼び出し側で自由に使ってよい）</remarks>
+</member><member name="P:Sock.RecvSockClass.RecvStatus">
+	<summary>
+ 受信ステータス
+ </summary>
+	<remarks>受信ステータス</remarks>
+</member><member name="P:Sock.RecvSockClass.BindTimeLimit">
+	<summary>
+ Bind処理のリミット
+ </summary>
+	<remarks>Bind処理のリミット</remarks>
+</member><member name="F:Sock.RecvSockClass.BindTimeOut">
+	<summary>
+ Bind処理タイムアウトミリ秒（とりあえず固定、必要であればPublicにしても良い）
+ </summary>
+	<remarks>Bind処理タイムアウトミリ秒（とりあえず固定、必要であればPublicにしても良い）</remarks>
+</member><member name="F:Sock.RecvSockClass.ListenTimeLimit">
+	<summary>
+ Listen処理のリミット
+ </summary>
+	<remarks>Listen処理のリミット</remarks>
+</member><member name="F:Sock.RecvSockClass.ListenTimeOut">
+	<summary>
+ Listen処理タイムアウトミリ秒（とりあえず固定、必要であればPublicにしても良い）
+ </summary>
+	<remarks>Listen処理タイムアウトミリ秒（とりあえず固定、必要であればPublicにしても良い）</remarks>
+</member><member name="F:Sock.RecvSockClass.ListenCheckTimer">
+	<summary>
+ ソケット受付監視タイマー
+ </summary>
+	<remarks>ソケット受付監視タイマー</remarks>
+</member><member name="F:Sock.RecvSockClass.ListenCheckTimerExecuting">
+	<summary>
+ ソケット受付監視タイマー処理中フラグ
+ </summary>
+	<remarks>ソケット受付監視タイマー処理中フラグ</remarks>
+</member><member name="F:Sock.RecvSockClass.SendCheckTimer">
+	<summary>
+ 送信状態監視タイマー
+ </summary>
+	<remarks>送信状態監視タイマー</remarks>
+</member><member name="F:Sock.RecvSockClass.SendCheckTimerExecuting">
+	<summary>
+ 送信状態監視タイマー処理中フラグ
+ </summary>
+	<remarks>送信状態監視タイマー処理中フラグ</remarks>
+</member><member name="F:Sock.RecvSockClass.SendParmClass.SendKEY">
+	<summary>
+ ソケット識別キー（呼び出し側で自由に使ってよい）
+ </summary>
+	<remarks>ソケット識別キー（呼び出し側で自由に使ってよい）</remarks>
+</member><member name="P:Sock.RecvSockClass.SendParmClass.sndCmd">
+	<summary>
+ 送信電文
+ </summary>
+	<remarks>送信電文</remarks>
+</member><member name="P:Sock.RecvSockClass.SendParmClass.SendTimeOut">
+	<summary>
+ 送信タイムアウトミリ秒。既定値1000
+ </summary>
+	<remarks>送信タイムアウトミリ秒</remarks>
+</member><member name="P:Sock.RecvSockClass.SendParmClass.SendRetry">
+	<summary>
+ 送信リトライを行う回数。既定値0
+ </summary>
+	<remarks>送信リトライを行う回数</remarks>
+</member><member name="P:Sock.RecvSockClass.SendParmClass.SendRetryWait">
+	<summary>
+ 送信リトライ間隔（ミリ秒）。既定値1000
+ </summary>
+	<remarks>送信リトライ間隔（ミリ秒）</remarks>
+</member><member name="P:Sock.RecvSockClass.SendParmClass.RemoteIP">
+	<summary>
+ 送信相手IP
+ </summary>
+	<remarks>送信相手IP</remarks>
+</member><member name="P:Sock.RecvSockClass.SendParmClass.RemotePort">
+	<summary>
+ 送信相手ポート
+ </summary>
+	<remarks>送信相手ポート</remarks>
+</member><member name="P:Sock.RecvSockClass.SendParmClass.SendRetryDo">
+	<summary>
+ 送信リトライを行った回数
+ </summary>
+	<remarks>送信リトライを行った回数</remarks>
+</member><member name="P:Sock.RecvSockClass.SendParmClass.SendTimeLimit">
+	<summary>
+ 送信処理のリミット（送信開始日時＋送信タイムアウト）
+ </summary>
+	<remarks>送信処理のリミット（送信開始日時＋送信タイムアウト）</remarks>
+</member><member name="P:Sock.RecvSockClass.SendParmClass.SendStatus">
+	<summary>
+ 送信ステータス
+ </summary>
+	<remarks>送信ステータス</remarks>
+</member><member name="T:Sock.RecvSockClass.SendParmClass">
+	<summary>
+ 送信用パラメータ
+ </summary>
+	<remarks>送信メソッドのパラメータ</remarks>
+</member><member name="F:Sock.RecvSockClass.SendCmdList">
+	<summary>
+ 送信電文の待ち行列
+ </summary>
+	<remarks>送信電文の待ち行列</remarks>
+</member><member name="E:Sock.RecvSockClass.OnMessage">
+	<summary>
+ メッセージ出力イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>メッセージ出力イベント</remarks>
+</member><member name="E:Sock.RecvSockClass.OnError">
+	<summary>
+ エラー発生イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>エラー発生イベント</remarks>
+</member><member name="E:Sock.RecvSockClass.OnListenEnd">
+	<summary>
+ LISTEN完了イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>LISTEN完了イベント</remarks>
+</member><member name="E:Sock.RecvSockClass.OnAcceptEnd">
+	<summary>
+ ACCEPT完了イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>ACCEPT完了イベント</remarks>
+</member><member name="E:Sock.RecvSockClass.OnRecvStart">
+	<summary>
+ 受信開始イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>受信開始イベント</remarks>
+</member><member name="E:Sock.RecvSockClass.OnRecvEnd">
+	<summary>
+ 受信完了イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>受信完了イベント</remarks>
+</member><member name="E:Sock.RecvSockClass.OnSendRetry">
+	<summary>
+ 送信リトライ開始イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>送信リトライ開始イベント</remarks>
+</member><member name="E:Sock.RecvSockClass.OnSendEnd">
+	<summary>
+ 送信完了イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>送信完了イベント</remarks>
+</member><member name="F:Sock.RecvSockClass.tState">
+	<summary>
+ 接続毎に持つ
+ </summary>
+	<remarks>接続毎に持つ</remarks>
+</member><member name="F:Sock.RecvSockClass.listener">
+	<summary>
+ ソケット
+ </summary>
+	<remarks>ソケット</remarks>
+</member><member name="M:Sock.RecvSockClass.IsAlive">
+	<summary>
+ ソケット生存確認
+ </summary>
+	<returns>True:生きている False:死んでいる</returns>
+	<remarks>ソケット生存確認</remarks>
+</member><member name="M:Sock.RecvSockClass.RcvSockStart">
+	<summary>
+ サーバソケット開始
+ </summary>
+	<remarks>サーバソケット開始</remarks>
+</member><member name="M:Sock.RecvSockClass.ListenCheckTimer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+	<summary>
+ Listen状態監視タイマー
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>Listen状態監視タイマー</remarks>
+</member><member name="M:Sock.RecvSockClass.CloseSockAll">
+	<summary>
+ すべてのソケットを閉じる
+ </summary>
+	<remarks>すべてのソケットを閉じる</remarks>
+</member><member name="M:Sock.RecvSockClass.CloseSock(System.String,System.String)">
+	<summary>
+ 指定されたソケットを閉じる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<remarks>指定されたソケットを閉じる</remarks>
+</member><member name="M:Sock.RecvSockClass.RaiseMessage(System.String)">
+	<summary>
+ メッセージイベントを発生させる
+ </summary>
+	<param name="msg">メッセージ</param>
+	<remarks>メッセージイベントを発生させる</remarks>
+</member><member name="M:Sock.RecvSockClass.RaiseError(System.String,Sock.SockErrors,System.String,System.String,System.String)">
+	<summary>
+ エラーイベントを発生させる
+ </summary>
+	<param name="msg">メッセージ</param>
+	<param name="sockError">ソケット結果</param>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="sendKey">送信時に設定したKey</param>
+	<remarks>
+ エラーイベントを発生させる
+ </remarks>
+</member><member name="M:Sock.RecvSockClass.RaiseListenEnd(System.String,System.String)">
+	<summary>
+ Listen完了イベントを発生させる
+ </summary>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<remarks>Listen完了イベントを発生させる</remarks>
+</member><member name="M:Sock.RecvSockClass.RaiseAcceptEnd(System.String,System.String,System.String,System.String)">
+	<summary>
+ 接続受付完了イベントを発生させる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<remarks>接続受付完了イベントを発生させる</remarks>
+</member><member name="M:Sock.RecvSockClass.RaiseRecvStart(System.String,System.String,System.String,System.String)">
+	<summary>
+ 受信開始イベントを発生させる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<remarks>受信開始イベントを発生させる</remarks>
+</member><member name="M:Sock.RecvSockClass.RaiseRecvEnd(System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ 受信完了イベントを発生させる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<param name="recvChar">受信内容</param>
+	<remarks>受信完了イベントを発生させる</remarks>
+</member><member name="M:Sock.RecvSockClass.RaiseSendRetry(System.String,System.String,System.String,System.String,System.Int64,System.String)">
+	<summary>
+ 送信リトライイベントを発生させる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<param name="RetryDoCnt">リトライ回数</param>
+	<param name="sendKey">送信KEY</param>
+	<remarks>送信リトライイベントを発生させる</remarks>
+</member><member name="M:Sock.RecvSockClass.RaiseSendEnd(System.String,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ 送信完了イベントを発生させる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<param name="sendChar">送信内容</param>
+	<param name="sendkey">送信KEY</param>
+	<remarks>送信完了イベントを発生させる</remarks>
+</member><member name="M:Sock.RecvSockClass.BeginAccept">
+	<summary>
+ Accept開始処理
+ </summary>
+	<remarks>Accept開始処理</remarks>
+</member><member name="M:Sock.RecvSockClass.AcceptCallback(System.IAsyncResult)">
+	<summary>
+ Accept開始コールバック
+ </summary>
+	<param name="ar">ソケット</param>
+	<remarks>Accept開始コールバック</remarks>
+</member><member name="M:Sock.RecvSockClass.GetStateIndex(System.String,System.String,System.String,System.String)">
+	<summary>
+ 指定されたソケットのインデックスを返す。なければ新たに作成する
+ </summary>
+	<param name="remoteIP">指定IP</param>
+	<param name="remotePort">指定PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<returns>インデックス</returns>
+	<remarks>指定されたソケットのインデックスを返す</remarks>
+</member><member name="M:Sock.RecvSockClass.FindStateIndex(System.String,System.String)">
+	<summary>
+ 指定されたソケットのインデックスを返す。なければ-999を返す
+ </summary>
+	<param name="remoteIP">指定IP</param>
+	<param name="remotePort">指定PORT</param>
+	<returns>インデックス</returns>
+	<remarks>指定されたソケットのインデックスを返す。</remarks>
+</member><member name="M:Sock.RecvSockClass.ReadCallback(System.IAsyncResult)">
+	<summary>
+ Readコールバック
+ </summary>
+	<param name="ar">ソケット</param>
+	<remarks>Readコールバック</remarks>
+</member><member name="M:Sock.RecvSockClass.SockSend(Sock.RecvSockClass.SendParmClass)">
+	<summary>
+ ソケット送信登録
+ </summary>
+	<param name="SendParm">送信パラメータ</param>
+	<remarks>ソケット送信登録</remarks>
+</member><member name="M:Sock.RecvSockClass.SendCheckTimer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+	<summary>
+ ソケット送信監視タイマー
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>ソケット送信監視タイマー</remarks>
+</member><member name="M:Sock.RecvSockClass.IsRemoveSendParm(Sock.RecvSockClass.SendParmClass)">
+	<summary>
+ 送信パラメータが削除可能か判定する
+ </summary>
+	<param name="sendParm">送信パラメータ</param>
+	<returns>True:削除可能 False:削除不可</returns>
+	<remarks>送信パラメータが削除可能か判定する</remarks>
+</member><member name="M:Sock.RecvSockClass.Send(System.String,System.String,System.Byte[])">
+	<summary>
+ ソケット送信
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="sndData">送信内容</param>
+	<remarks>ソケット送信</remarks>
+</member><member name="M:Sock.RecvSockClass.SendCallback(System.IAsyncResult)">
+	<summary>
+ ソケット送信コールバック
+ </summary>
+	<param name="ar">ソケット</param>
+	<remarks>ソケット送信コールバック</remarks>
+</member><member name="M:Sock.RecvSockClass.GetSendingIndex(System.Object,System.Object)">
+	<summary>
+ 指定されたソケットの送信中状態のインデックスを取得する
+ </summary>
+	<param name="remoteIP">指定IP</param>
+	<param name="remotePort">指定PORT</param>
+	<returns>インデックス</returns>
+	<remarks>指定されたソケットの送信中状態のインデックスを取得する</remarks>
+</member><member name="T:Sock.RecvSockClass">
+	<summary>
+ 受信ソケットクラス
+ </summary>
+	<remarks>受信ソケットクラス</remarks>
+</member><member name="P:Sock.SendSockClass.EndCheckChar">
+	<summary>
+ 受信終了判定文字列。この文字が来たら電文の終了とする。この文字を指定した場合、この文字が来るまで電文を連結して受信を続ける。指定していない場合は１回の通信単位＝電文単位となる
+ </summary>
+	<remarks>受信終了判定文字列。この文字が来たら電文の終了とする。この文字を指定した場合、この文字が来るまで電文を連結して受信を続ける。指定していない場合は１回の通信単位＝電文単位となる </remarks>
+</member><member name="P:Sock.SendSockClass.RemoteIP">
+	<summary>
+ 相手IP
+ </summary>
+	<remarks>相手IP</remarks>
+</member><member name="P:Sock.SendSockClass.RemotePort">
+	<summary>
+ 相手Port
+ </summary>
+	<remarks>相手Port</remarks>
+</member><member name="P:Sock.SendSockClass.ConnectTimeOut">
+	<summary>
+ 接続タイムアウトミリ秒。既定値1000
+ </summary>
+	<remarks>接続タイムアウトミリ秒</remarks>
+</member><member name="P:Sock.SendSockClass.ConnectRetry">
+	<summary>
+ 接続リトライを行う回数。既定値0
+ </summary>
+	<remarks>接続リトライを行う回数</remarks>
+</member><member name="P:Sock.SendSockClass.ConnectRetryWait">
+	<summary>
+ 接続リトライ間隔（ミリ秒）。既定値1000
+ </summary>
+	<remarks>接続リトライ間隔（ミリ秒）</remarks>
+</member><member name="F:Sock.SendSockClass.ConnectTimeLimit">
+	<summary>
+ 接続処理のリミット（接続開始日時＋接続タイムアウト）
+ </summary>
+	<remarks>接続処理のリミット（接続開始日時＋接続タイムアウト）</remarks>
+</member><member name="F:Sock.SendSockClass.ConnectRetryDo">
+	<summary>
+ 接続リトライを行った回数
+ </summary>
+	<remarks>接続リトライを行った回数</remarks>
+</member><member name="F:Sock.SendSockClass.ConnectCheckTimer">
+	<summary>
+ 接続状態監視タイマー
+ </summary>
+	<remarks>接続状態監視タイマー</remarks>
+</member><member name="F:Sock.SendSockClass.ConnectCheckTimerExecuting">
+	<summary>
+ 接続状態監視タイマー処理中フラグ
+ </summary>
+	<remarks>接続状態監視タイマー処理中フラグ</remarks>
+</member><member name="F:Sock.SendSockClass.SendStatus">
+	<summary>
+ 送信ステータス
+ </summary>
+	<remarks>送信ステータス</remarks>
+</member><member name="F:Sock.SendSockClass.RecvStatus">
+	<summary>
+ 受信ステータス
+ </summary>
+	<remarks>受信ステータス</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.SendKEY">
+	<summary>
+ ソケット識別キー（呼び出し側で自由に使ってよい）
+ </summary>
+	<remarks>ソケット識別キー（呼び出し側で自由に使ってよい）</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.sndCmd">
+	<summary>
+ 送信電文
+ </summary>
+	<remarks>送信電文</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.SendTimeOut">
+	<summary>
+ 送信タイムアウトミリ秒。既定値1000
+ </summary>
+	<remarks>送信タイムアウトミリ秒</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.SendRetry">
+	<summary>
+ 送信リトライを行う回数。既定値0
+ </summary>
+	<remarks>送信リトライを行う回数</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.SendRetryWait">
+	<summary>
+ 送信リトライ間隔（ミリ秒）
+ </summary>
+	<remarks>送信リトライ間隔（ミリ秒）</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.IsRecv">
+	<summary>
+ 送信完了後にサーバーソケットからの返信待ちを行うか
+ </summary>
+	<remarks>送信完了後にサーバーソケットからの返信待ちを行うか</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.RecvTimeOut">
+	<summary>
+ サーバーソケットからの返信待ちタイムアウトミリ秒
+ </summary>
+	<remarks>サーバーソケットからの返信待ちタイムアウトミリ秒</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.SendRetryDo">
+	<summary>
+ 送信リトライを行った回数
+ </summary>
+	<remarks>送信リトライを行った回数</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.SendTimeLimit">
+	<summary>
+ 送信処理のリミット（送信開始日時＋送信タイムアウト）
+ </summary>
+	<remarks>送信処理のリミット（送信開始日時＋送信タイムアウト）</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.IsSendEnd">
+	<summary>
+ 送信処理済みであればTrue
+ </summary>
+	<remarks>送信処理済みであればTrue</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.RecvTimeLimit">
+	<summary>
+ 受信処理のリミット（受信開始日時＋送信タイムアウト）
+ </summary>
+	<remarks>受信処理のリミット（受信開始日時＋送信タイムアウト）</remarks>
+</member><member name="P:Sock.SendSockClass.SendParmClass.IsRecvEnd">
+	<summary>
+ 受信処理済みであればTrue
+ </summary>
+	<remarks>受信処理済みであればTrue</remarks>
+</member><member name="T:Sock.SendSockClass.SendParmClass">
+	<summary>
+ 送信用パラメータ
+ </summary>
+	<remarks>送信メソッドのパラメータ</remarks>
+</member><member name="F:Sock.SendSockClass.SendCmdList">
+	<summary>
+ 送信電文の待ち行列
+ </summary>
+	<remarks>送信電文の待ち行列</remarks>
+</member><member name="F:Sock.SendSockClass.SendingIndex">
+	<summary>
+ 現在送信処理中の待ち行列
+ </summary>
+	<remarks>現在送信処理中の待ち行列</remarks>
+</member><member name="F:Sock.SendSockClass.SendCheckTimer">
+	<summary>
+ 送信状態監視タイマー
+ </summary>
+	<remarks>送信状態監視タイマー</remarks>
+</member><member name="F:Sock.SendSockClass.SendCheckTimerExecuting">
+	<summary>
+ 送信状態監視タイマー処理中フラグ
+ </summary>
+	<remarks>送信状態監視タイマー処理中フラグ</remarks>
+</member><member name="F:Sock.SendSockClass.RecvCheckTimer">
+	<summary>
+ 受信状態監視タイマー
+ </summary>
+	<remarks>受信状態監視タイマー</remarks>
+</member><member name="F:Sock.SendSockClass.RecvCheckTimerExecuting">
+	<summary>
+ 受信状態監視タイマー処理中フラグ
+ </summary>
+	<remarks>受信状態監視タイマー処理中フラグ</remarks>
+</member><member name="F:Sock.SendSockClass.TAG">
+	<summary>
+ タグ（呼び出し側で自由に使ってよい）
+ </summary>
+	<remarks>タグ（呼び出し側で自由に使ってよい）</remarks>
+</member><member name="E:Sock.SendSockClass.OnMessage">
+	<summary>
+ メッセージ出力イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>メッセージ出力イベント</remarks>
+</member><member name="E:Sock.SendSockClass.OnConnectEnd">
+	<summary>
+ 接続完了イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>接続完了イベント</remarks>
+</member><member name="E:Sock.SendSockClass.OnConnectRetry">
+	<summary>
+ 接続リトライ開始イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>接続リトライ開始イベント</remarks>
+</member><member name="E:Sock.SendSockClass.OnSendRetry">
+	<summary>
+ 送信リトライ開始イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>送信リトライ開始イベント</remarks>
+</member><member name="E:Sock.SendSockClass.OnSendEnd">
+	<summary>
+ 送信完了イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>送信完了イベント</remarks>
+</member><member name="E:Sock.SendSockClass.OnRecvEnd">
+	<summary>
+ 受信完了イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>受信完了イベント</remarks>
+</member><member name="E:Sock.SendSockClass.OnError">
+	<summary>
+ エラー発生イベント
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>エラー発生イベント</remarks>
+</member><member name="F:Sock.SendSockClass.tState">
+	<summary>
+ IPアドレス毎に持つ
+ </summary>
+	<remarks>IPアドレス毎に持つ</remarks>
+</member><member name="F:Sock.SendSockClass.client">
+	<summary>
+ クライアントソケット
+ </summary>
+	<remarks>クライアントソケット</remarks>
+</member><member name="M:Sock.SendSockClass.IsAlive">
+	<summary>
+ ソケット生存確認
+ </summary>
+	<returns>True:生きている False:死んでいる</returns>
+	<remarks>ソケット生存確認</remarks>
+</member><member name="M:Sock.SendSockClass.RaiseMessage(System.String)">
+	<summary>
+ メッセージイベントを発生させる
+ </summary>
+	<param name="msg">メッセージ</param>
+	<remarks>メッセージイベントを発生させる</remarks>
+</member><member name="M:Sock.SendSockClass.RaiseError(System.String,Sock.SockErrors,System.String,System.String,System.String)">
+	<summary>
+ エラーイベントを発生させる
+ </summary>
+	<param name="msg">メッセージ</param>
+	<param name="sockError">エラータイプ</param>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="sendKey">送信KEY</param>
+	<remarks>エラーイベントを発生させる</remarks>
+</member><member name="M:Sock.SendSockClass.RaiseConnectEnd(System.String,System.String,System.String,System.String)">
+	<summary>
+ 接続完了イベントを発生させる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<remarks>接続完了イベントを発生させる</remarks>
+</member><member name="M:Sock.SendSockClass.RaiseConnectRetry(System.String,System.String,System.Int64)">
+	<summary>
+ 接続リトライイベントを発生させる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="RetryDoCnt">リトライ回数</param>
+	<remarks>接続リトライイベントを発生させる</remarks>
+</member><member name="M:Sock.SendSockClass.RaiseRecvEnd(System.String,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ 受信完了イベントを発生させる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<param name="recvChar">受信内容</param>
+	<remarks>受信完了イベントを発生させる</remarks>
+</member><member name="M:Sock.SendSockClass.RaiseSendRetry(System.String,System.String,System.String,System.String,System.Int64,System.String)">
+	<summary>
+ 送信リトライイベントを発生させる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<param name="RetryDoCnt">リトライ回数</param>
+	<param name="sendKey">送信KEY</param>
+	<remarks>送信リトライイベントを発生させる</remarks>
+</member><member name="M:Sock.SendSockClass.RaiseSendEnd(System.String,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ 送信完了イベントを発生させる
+ </summary>
+	<param name="remoteIP">相手IP</param>
+	<param name="remotePort">相手PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<param name="sendChar">送信内容</param>
+	<param name="sendkey">送信KEY</param>
+	<remarks>送信完了イベントを発生させる</remarks>
+</member><member name="M:Sock.SendSockClass.SockConnect">
+	<summary>
+ ソケット接続開始処理
+ </summary>
+	<remarks>ソケット接続開始処理</remarks>
+</member><member name="M:Sock.SendSockClass.ConnectCheckTimer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+	<summary>
+ 接続チェックタイマー
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>接続チェックタイマー</remarks>
+</member><member name="M:Sock.SendSockClass.Connect">
+	<summary>
+ ソケット接続
+ </summary>
+	<remarks>ソケット接続</remarks>
+</member><member name="M:Sock.SendSockClass.ConnectCallback(System.IAsyncResult)">
+	<summary>
+ ソケット接続コールバック
+ </summary>
+	<param name="ar">ソケット</param>
+	<remarks>ソケット接続コールバック</remarks>
+</member><member name="M:Sock.SendSockClass.CloseSock">
+	<summary>
+ ソケット切断処理
+ </summary>
+	<remarks>ソケット切断処理</remarks>
+</member><member name="M:Sock.SendSockClass.SockSend(Sock.SendSockClass.SendParmClass)">
+	<summary>
+ 送信開始処理
+ </summary>
+	<param name="SendParm">送信パラメータ</param>
+	<remarks>送信開始処理</remarks>
+</member><member name="M:Sock.SendSockClass.SendCheckTimer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+	<summary>
+ 送信監視タイマー処理
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>送信監視タイマー処理</remarks>
+</member><member name="M:Sock.SendSockClass.IsRemoveSendParm(Sock.SendSockClass.SendParmClass)">
+	<summary>
+ 送信パラメータを削除して良いかチェックする
+ </summary>
+	<param name="sendParm">送信パラメータ</param>
+	<returns>True:削除可 False:削除不可</returns>
+	<remarks>送信パラメータを削除して良いかチェックする</remarks>
+</member><member name="M:Sock.SendSockClass.Send">
+	<summary>
+ ソケット送信
+ </summary>
+	<remarks>ソケット送信</remarks>
+</member><member name="M:Sock.SendSockClass.SendCallback(System.IAsyncResult)">
+	<summary>
+ ソケット送信コールバック
+ </summary>
+	<param name="ar">ソケット</param>
+	<remarks>ソケット送信コールバック</remarks>
+</member><member name="M:Sock.SendSockClass.GetStateIndex(System.String,System.String,System.String,System.String)">
+	<summary>
+ 指定されたIPのステートのインデックスを返す。なければ新たに作成する
+ </summary>
+	<param name="remoteIP">指定IP</param>
+	<param name="remotePort">指定PORT</param>
+	<param name="localIP">自IP</param>
+	<param name="localPort">自PORT</param>
+	<returns>インデックス</returns>
+	<remarks>指定されたソケットのインデックスを返す</remarks>
+</member><member name="M:Sock.SendSockClass.ReadCallback(System.IAsyncResult)">
+	<summary>
+ 受信コールバック
+ </summary>
+	<param name="ar">ソケット</param>
+	<remarks>受信コールバック</remarks>
+</member><member name="M:Sock.SendSockClass.RecvCheckTimer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+	<summary>
+ 受信監視タイマー処理
+ </summary>
+	<param name="sender">イベント発生元</param>
+	<param name="e">イベント引数</param>
+	<remarks>受信監視タイマー処理</remarks>
+</member><member name="T:Sock.SendSockClass">
+	<summary>
+ 送信ソケットクラス
+ </summary>
+	<remarks>送信ソケットクラス</remarks>
+</member><member name="M:Sock.F.Byte2HexChar(System.Byte[])">
+	<summary>
+ バイト配列をhex文字列に 例)000112FF（F.Byte2HexChar）
+ </summary>
+	<param name="bytearr">バイト配列</param>
+	<returns>inputをhex文字列にした結果</returns>
+	<remarks>バイト配列をhex文字列に 例)000112FF（F.Byte2HexChar）</remarks>
+</member><member name="M:Sock.F.HexChar2Byte(System.String)">
+	<summary>
+ hex文字列をバイト配列に
+ </summary>
+	<param name="hexString">hex文字列</param>
+	<returns>バイト配列</returns>
+	<remarks>hex文字列をバイト配列に</remarks>
+</member><member name="M:Sock.F.Byte2String(System.Byte[])">
+	<summary>
+ バイト配列をString文字列に
+ </summary>
+	<param name="bytearr">バイト配列</param>
+	<returns>String文字列</returns>
+	<remarks>バイト配列をString文字列に</remarks>
+</member><member name="M:Sock.F.String2Byte(System.String)">
+	<summary>
+ String文字列をバイト配列に
+ </summary>
+	<param name="Value">String文字列</param>
+	<returns>バイト配列</returns>
+	<remarks>String文字列をバイト配列に</remarks>
+</member><member name="M:Sock.F.Wait(System.Int64)">
+	<summary>
+ 待ち処理
+ </summary>
+	<param name="msec">待つ時間（ミリ秒）</param>
+	<remarks>待ち処理</remarks>
+</member><member name="P:Sock.My.Resources.Resources.ResourceManager">
+	<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member><member name="P:Sock.My.Resources.Resources.Culture">
+	<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member><member name="T:Sock.My.Resources.Resources">
+	<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,8 @@
+C:\Users\kihara\Dropbox\SafeMonk\仕事\プレジャー\Socket\ソース\Sock\Sock\obj\x86\Debug\Sock.Resources.resources
+C:\Users\kihara\Dropbox\SafeMonk\仕事\プレジャー\Socket\ソース\Sock\Sock\obj\x86\Debug\Sock.vbproj.GenerateResource.Cache
+C:\Users\kihara\Dropbox\SafeMonk\仕事\プレジャー\Socket\ソース\Sock\Sock\bin\Debug\Sock.dll
+C:\Users\kihara\Dropbox\SafeMonk\仕事\プレジャー\Socket\ソース\Sock\Sock\bin\Debug\Sock.pdb
+C:\Users\kihara\Dropbox\SafeMonk\仕事\プレジャー\Socket\ソース\Sock\Sock\bin\Debug\Sock.xml
+C:\Users\kihara\Dropbox\SafeMonk\仕事\プレジャー\Socket\ソース\Sock\Sock\obj\x86\Debug\Sock.dll
+C:\Users\kihara\Dropbox\SafeMonk\仕事\プレジャー\Socket\ソース\Sock\Sock\obj\x86\Debug\Sock.xml
+C:\Users\kihara\Dropbox\SafeMonk\仕事\プレジャー\Socket\ソース\Sock\Sock\obj\x86\Debug\Sock.pdb
